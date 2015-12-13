@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 /*
  * 请判定一个数独是否有效。

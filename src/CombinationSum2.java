@@ -1,3 +1,5 @@
+import java.util.List;
+
 /*
  * Given a collection of candidate numbers (C) and a target number (T), 
  * find all unique combinations in C where the candidate numbers sums to T.
@@ -7,6 +9,6 @@
  */
 public class CombinationSum2 {
     public List<List<Integer>> combinationSum2(int[] num, int target) {
-        // write your code here
+        return null;
     }
 }

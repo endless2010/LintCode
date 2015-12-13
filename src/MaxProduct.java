@@ -3,7 +3,7 @@ import org.junit.Test;
 
 //TODO:0?
 public class MaxProduct {
-		pub lic int maxProduct(int[] nums){
+		public int maxProduct(int[] nums){
 			if(nums==null||nums.length==0)
 				return Integer.MIN_VALUE;
 			if(nums.length==1)

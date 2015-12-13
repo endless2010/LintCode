@@ -8,6 +8,6 @@
  */
 public class Median2 {
     public int[] medianII(int[] nums) {
-        // write your code here
+        return null;
     }
 }

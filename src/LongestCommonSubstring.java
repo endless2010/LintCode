@@ -4,6 +4,6 @@
  */
 public class LongestCommonSubstring {
     public int longestCommonSubstring(String A, String B) {
-        // write your code here
+        return 0;
     }
 }

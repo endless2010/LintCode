@@ -34,3 +34,4 @@ public class SortColors {
 		sortColors(array1);
 		Assert.assertArrayEquals(array1, new int[] { 0, 0 });
 	}
+}
