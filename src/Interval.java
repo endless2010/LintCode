@@ -13,6 +13,10 @@ public class Interval {
 	}
 	
 	@Override
+	public String toString(){
+		return "["+start+"-"+end+"]";
+	}
+	@Override
 	public boolean equals(Object obj){
 		if(!(obj instanceof Interval))
 			return false;
