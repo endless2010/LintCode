@@ -5,8 +5,11 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 /*
- * 给定一个整数数组，请找出一个连续子数组，使得该子数组的和最大。输出答案时，
- * 请分别返回第一个数字下标和最后一个数字下标的值。（如果两个相同的答案，请返回其中任意一个）
+Given an integer array, find a continuous subarray where the sum of numbers is the biggest. Your code should return the index of the first number and the index of the last number. (If their are duplicate answer, return anyone)
+
+Have you met this question in a real interview? Yes
+Example
+Give [-3, 1, 3, -3, 4], return [1,4].
  */
 public class ContinuousSubArraySum {
 	public ArrayList<Integer> continuousSubarraySum(int[] A) {
