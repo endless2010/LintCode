@@ -2,7 +2,24 @@ import java.util.Stack;
 
 import org.junit.Assert;
 import org.junit.Test;
+/*
+ * Given an absolute path for a file (Unix-style), simplify it.
 
+Have you met this question in a real interview? Yes
+Example
+"/home/", => "/home"
+
+"/a/./b/../../c/", => "/c"
+
+Challenge
+Did you consider the case where path = "/../"?
+
+In this case, you should return "/".
+
+Another corner case is the path might contain multiple slashes '/' together, such as "/home//foo/".
+
+In this case, you should ignore redundant slashes and return "/home/foo".
+ */
 public class SimplifyPath {
 
 	public String simplifyPath(String path) {
