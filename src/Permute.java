@@ -18,9 +18,12 @@ import org.junit.Test;
  * ]
  */
 public class Permute {
+	
     public ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums) {
-    	Collections.sort(nums);
     	ArrayList<ArrayList<Integer>> result=new ArrayList<ArrayList<Integer>>();
+    	if(nums==null)
+    		return result;
+    	Collections.sort(nums);
     	boolean[] used=new boolean[nums.size()];
     	helper(nums,new ArrayList<Integer>(),result,used);
     	return result;
