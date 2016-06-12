@@ -30,5 +30,6 @@ public class Median {
     public void test(){
     	Assert.assertEquals(3,median(new int[]{4, 5, 1, 2, 3}));
     	Assert.assertEquals(5,median(new int[]{7, 9, 4, 5}));
+    	Assert.assertEquals(-3,median(new int[]{-1,-2,-3,-100,-1,-50}));
     }
 }
