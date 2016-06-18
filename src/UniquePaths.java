@@ -1,44 +1,45 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-/*
- * 有一个机器人的位于一个M×N个网格左上角（下图中标记为'Start'）。
- * 机器人每一时刻只能向下或者向右移动一步。机器人试图达到网格的右下角（下图中标记为'Finish'）。
- * 问有多少条不同的路径？
+/**
+ * A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+ * The robot can only move either down or right at any point in time. 
+ * The robot is trying to reach the bottom-right corner of the grid 
+ * (marked 'Finish' in the diagram below).
+ * How many possible unique paths are there?
+ * Notice: m and n will be at most 100.
+ * 
+ * Have you met this question in a real interview? Yes
+ * Example
+ * 1,1	1,2	1,3	1,4	1,5	1,6	1,7
+ * 2,1						2,7
+ * 3,1						3,7
+ * Above is a 3 x 7 grid. How many possible unique paths are there?
  */
 public class UniquePaths {
-	
-	public List<Integer> next(List<Integer> temp){
-		List<Integer> result=new ArrayList<Integer>();
-		result.add(1);
-		for(int i=1;i<temp.size();++i)
-			result.add(temp.get(i)+temp.get(i-1));
-		result.add(1);
-		return result;
-	}
-    public List<Integer> getRow(int rowIndex) {
-		 List<Integer> list=Arrays.asList(1);
-		 for(int i=0;i<rowIndex;++i){
-			 list=next(list);
-		 }
-		 return list;
+    public int uniquePaths(int m, int n) {
+    	if(m<=0 || n<=0)
+    		return 0;
+    	if(m==1 || n==1)
+    		return 1;
+    	int[][] dp=new int[m][n];
+    	Arrays.fill(dp[0], 1);
+    	for(int i=0;i<m;++i)
+    		dp[i][0]=1;
+    	for(int i=1;i<m;++i){
+    		for(int j=1;j<n;++j)
+    			dp[i][j]=dp[i-1][j]+dp[i][j-1];
+    	}
+    	return dp[m-1][n-1];
     }
-    
-	public int uniquePaths(int  m,int n){
-		if(m>n)
-			return getRow(m+1).get(n+1);
-		else
-			return getRow(n+1).get(m+1);
-	}
-	@Test
-	public void test(){
-		Assert.assertEquals(3,uniquePaths(2,3));
-		Assert.assertEquals(4,uniquePaths(2,4));
-		Assert.assertEquals(6,uniquePaths(3,3));
-		Assert.assertEquals(10,uniquePaths(3,4));
-	}
+    @Test
+    public void test(){
+    	Assert.assertEquals(1,uniquePaths(1,1));
+    	Assert.assertEquals(1,uniquePaths(1,2));
+    	Assert.assertEquals(1,uniquePaths(2,1));
+    	Assert.assertEquals(2,uniquePaths(2,2));
+    	Assert.assertEquals(3,uniquePaths(3,2));
+    }
 }
